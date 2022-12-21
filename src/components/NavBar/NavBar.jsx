@@ -5,7 +5,7 @@ export const NavBar = () => {
   return(
     <nav className="navContainer">
       <div className="LogoContainer">
-        <img src="../../public/vite.svg" className="logo"></img>
+        <img src="logo.png" className="logo"></img>
       </div>
       <ItemListContainer/>
       <CardWidget/>
