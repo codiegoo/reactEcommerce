@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+* body {
+  background: #F4F3F3;
+}
+
+.navContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background: #3b3b3b;
+}
+.navContainer .LogoContainer {
+  width: 6rem;
+}
+.navContainer .LogoContainer .logo {
+  width: 100%;
+}
+
+.listContainer {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+.listContainer .listItem {
+  margin: auto 3rem;
+  font-family: sans-serif;
+  color: #DEF5E5;
+  cursor: pointer;
+}
+
+.iconMyCar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.iconMyCar .iconCar {
+  font-size: 3rem;
+}/*# sourceMappingURL=main.css.map */
