@@ -1,16 +1,27 @@
-
+import { ItemList } from "../ItemList/ItemList"
+import { useEffect, useState } from "react"
+import { pedirDatos } from "../../helpers/pedirDatos"
 
 
 export const ItemListContainer = () => {
 
-  console.log('los items se aplicaron correctamente')
+  const [productos, setProductos] = useState([])
+
+  useEffect( () => {
+    pedirDatos()
+      .then((res) => {
+        setProductos(res)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  } )
+
   return(
-    <ul className="listContainer">
-      <li className="listItem"><a>Celulares</a></li>
-      <li className="listItem">Tablets</li>
-      <li className="listItem">Laptops</li>
-      <li className="listItem">Pc</li>
-      <li className="listItem">Accesorios</li>
-    </ul>
+    <div>
+      {
+        <ItemList productos={productos}/>
+      }
+    </div>
   )
 }
