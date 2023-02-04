@@ -3,8 +3,8 @@
 export const CardWidget = () => {
 
   return(
-    <div className="iconMyCar">
-      <a href="../ItemListContainer/ItemListContainer.jsx"><i className="bi bi-cart3 iconCar"></i></a>
+    <div>
+      <h5>Carrito de compras</h5>
     </div>
   )
 }

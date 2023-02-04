@@ -4,9 +4,7 @@ export const ItemList = ( {productos} ) => {
 
   return(
     <div>
-      <h2>Nuestros productos</h2>
-      <hr/>
-
+      <h2 className="prodText">Nuestros Productos</h2>
       <section className="prodContainer">
         { productos.map((prod) => <Item key={prod.id} {...prod}/>)}
       </section>
