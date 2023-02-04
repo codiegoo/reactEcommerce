@@ -4,6 +4,8 @@
 }
 * body {
   background: #F4F3F3;
+  font-family: sans-serif;
+  font-size: 1.2rem;
 }
 
 .navContainer {
@@ -12,52 +14,49 @@
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  background: #3b3b3b;
+  background: rgb(59, 59, 59);
 }
 .navContainer .LogoContainer {
-  width: 4rem;
+  width: 2.8rem;
 }
 .navContainer .LogoContainer .logo {
   width: 100%;
 }
-
-.listContainer {
-  list-style: none;
-  display: flex;
-  flex-direction: row;
-}
-.listContainer .listItem {
-  margin: auto 1rem;
-  cursor: pointer;
-}
-.listContainer .listItem a {
-  text-decoration: none;
-  color: #DEF5E5;
-  font-family: sans-serif;
-}
-
-.iconMyCar {
+.navContainer .iconMyCar {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.iconMyCar a {
-  text-decoration: none;
+.navContainer .iconMyCar .iconCar {
+  font-size: 1rem;
+  cursor: pointer;
   color: #22A39F;
 }
-.iconMyCar a .iconCar {
-  font-size: 3rem;
+
+.listContainer {
+  width: 50%;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.listContainer .listItem {
+  margin: 1.5rem;
   cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  color: #22A39F;
+  font-family: sans-serif;
 }
 
 .bannerImg {
   width: 100%;
-  height: 45rem;
+  height: 65rem;
   background: url("../src/assets/banner.png") no-repeat;
   background-size: 100%;
 }
 .bannerImg h2 {
-  color: #22A39F;
+  color: rgb(34, 163, 159);
   font-family: sans-serif;
   font-size: 8rem;
   padding: 4rem 2rem;
@@ -79,15 +78,203 @@
 
 .prodCard {
   margin: 1rem;
-  background: blue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .prodCard .prodImg {
   width: 80%;
-  margin: auto 0;
+  height: 80%;
+}
+.prodCard .verMasBtn {
+  background: #22A39F;
+  color: #3b3b3b;
+  border: none;
+  border-radius: 1rem;
+  padding: 0.5rem 3rem;
+  margin: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+.prodCard .verMasBtn:hover {
+  background: #3b3b3b;
+  color: #22A39F;
 }
 
 .prodContainer {
   width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.prodText {
+  margin: 1.5rem;
+  text-align: center;
+}
+
+.itemDetailContain {
+  width: 70%;
+  background: #22A39F;
+  margin: 3rem auto;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.itemDetailContain h2 {
+  margin-top: 1rem;
+}
+.itemDetailContain img {
+  width: 30%;
+  margin: 1rem auto;
+}
+.itemDetailContain p {
+  margin: 0.5rem auto;
+}
+.itemDetailContain .volverBtn {
+  font-size: 1rem;
+  text-decoration: none;
+  color: #3d3d3d;
+  width: 15rem;
+  padding: 1rem;
+  margin: 1rem auto;
+  border-radius: 1rem;
+  background: #fff;
+  border: none;
+  cursor: pointer;
+}
+.itemDetailContain .volverBtn:hover {
+  background: #3d3d3d;
+  color: #fff;
+}
+
+.itemCountContain button {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin: 1rem 1rem;
+  border: none;
+  cursor: pointer;
+  background: #3d3d3d;
+  color: #fff;
+}
+.itemCountContain button:hover {
+  background: #fff;
+  color: #3d3d3d;
+}
+
+.linkCart {
+  display: block;
+  text-decoration: none;
+}
+.linkCart .iconCart {
+  color: #22A39F;
+  width: 3rem;
+  height: 100%;
+}
+.linkCart span {
+  color: #22A39F;
+}
+
+.cartContain {
+  width: 80%;
+  margin: 2rem auto;
+  border-radius: 2rem;
+  background: #3d3d3d;
+  display: flex;
+  flex-direction: column;
+}
+.cartContain h2 {
+  text-align: center;
+  margin: 1rem 1rem;
+}
+.cartContain .miBuy {
   display: flex;
   flex-direction: row;
+}
+.cartContain .miBuy .miProducts {
+  width: 70%;
+}
+.cartContain .miBuy .miProducts .itemContent {
+  width: 80%;
+  background: #22A39F;
+  margin: 1rem auto;
+  border-radius: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.cartContain .miBuy .miProducts .itemContent img {
+  width: 15rem;
+}
+.cartContain .miBuy .miProducts .itemContent .itemText h4,
+.cartContain .miBuy .miProducts .itemContent .itemText p {
+  margin-bottom: 1rem;
+}
+.cartContain .miBuy .miProducts .itemContent button {
+  background: none;
+  border: none;
+}
+.cartContain .miBuy .miProducts .itemContent button .bashBtn {
+  width: 5rem;
+  height: 5rem;
+  cursor: pointer;
+}
+.cartContain .miBuy .miProducts .itemContent button .bashBtn:hover {
+  color: red;
+}
+.cartContain .miBuy .miPay {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.cartContain .miBuy .miPay h4.totalText {
+  margin: 1rem;
+  text-align: center;
+  color: #Fff;
+}
+.cartContain .miBuy .miPay button {
+  width: 10rem;
+  padding: 1rem;
+  margin: 1rem auto;
+  border-radius: 1rem;
+  border: none;
+  cursor: pointer;
+}
+.cartContain .miBuy .miPay button:hover {
+  background: #22A39F;
+  color: #fff;
+}
+
+.loginScreen {
+  width: 100%;
+  height: 100vh;
+  background: #3d3d3d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loginScreen .login {
+  max-width: 60%;
+  padding: 5rem;
+  border-radius: 2rem;
+  background: #22A39F;
+}
+.loginScreen .login h2 {
+  text-align: center;
+}
+.loginScreen .login form {
+  display: flex;
+  flex-direction: column;
+}
+.loginScreen .login form input,
+.loginScreen .login form button {
+  width: 20rem;
+  padding: 1rem;
+  margin: 0 auto;
+  margin-top: 2rem;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
 }/*# sourceMappingURL=main.css.map */

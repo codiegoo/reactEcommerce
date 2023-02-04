@@ -21,6 +21,6 @@ export const pedirItemPorId = (id) => {
           error: 'no se encontro ese producto'
         })
       }
-    }, 2000)
+    }, 0)
   })
 }
