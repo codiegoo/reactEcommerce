@@ -1,19 +1,22 @@
-import { createContext, useState, useContext } from "react";
+import { createContext, useState, useContext, useEffect } from "react";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
+import { auth } from "../firebase/config";
 
-const MOCK_USERS = [
-  {
-    email: 'diegoedvflores@gmail.com',
-    password: 'admin'
-  },
-  {
-    email: 'tutoredv@gmail.com',
-    password: 'coder'
-  },
-  {
-    email: 'profesor12@gmail.com',
-    password: 'coder'
-  }
-]
+
+// const MOCK_USERS = [
+//   {
+//     email: 'diegoedvflores@gmail.com',
+//     password: 'admin'
+//   },
+//   {
+//     email: 'tutoredv@gmail.com',
+//     password: 'coder'
+//   },
+//   {
+//     email: 'profesor12@gmail.com',
+//     password: 'coder'
+//   }
+// ]
 
 
 export const LoginContext = createContext()
@@ -25,42 +28,26 @@ export const useLoginContext = () => {
 export const LoginProvider = ({children}) => {
   const [loading, setLoading] = useState(false)
   const [user, setUser] = useState({
-    email: 'diegoedvflores@gmail.com',
-    logged: true,
+    email: '',
+    logged: false,
     error: null
   })
 
-  console.log(user)
+  // console.log(user)
 
   const login = (values) => {
     setLoading(true)
-    setTimeout(()=>{
-      const match = MOCK_USERS.find(user => user.email === values.email)
 
-      if (!match) {
-        setUser({
-          email: null,
-          logged: false,
-          error: 'Usuario Incorrecto'
-        })
-        setLoading(false)
-        return
-      }
-      if (match.password === values.password) {
-        setUser({
-          email: match.email,
-          logged: true,
-          error: null
-        })
-      }else {
-        setUser({
-          email: null,
-          logged: false,
-          error: 'Contraseña Incorrecta'
-        })
-      }
-      setLoading(false)
-    }, 1500)
+    signInWithEmailAndPassword(auth, values.email, values.password)
+    .catch((error) => {
+      console.log(error)
+      setUser({
+        email: null,
+        logged: false,
+        error: error.message
+      })
+    })
+    .finally(()=>setLoading(false))
   }
 
   const logout = () => {
@@ -70,8 +57,36 @@ export const LoginProvider = ({children}) => {
       error: null
     })
   }
+
+  const register = (values) => {
+    setLoading(true)
+    createUserWithEmailAndPassword(auth, values.email, values.password)
+      .catch((error) => {
+        console.log(error)
+        setUser({
+          email: null,
+          logged: false,
+          error: error.message
+        })
+      })
+      .finally(()=>setLoading(false))
+  }
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (user)=>{
+      if (user) {
+        setUser({
+          email: user.email,
+          logged: true,
+          error: null
+        })
+      }else{
+        logout()
+      }
+    })
+  }, [])
   return(
-    <LoginContext.Provider value={{user, login, logout, loading}}>
+    <LoginContext.Provider value={{user, login, logout, loading, register}}>
       {children}
     </LoginContext.Provider>
   )

@@ -32,6 +32,19 @@
   cursor: pointer;
   color: #22A39F;
 }
+.navContainer .nameDataContain p {
+  margin-top: 0.5rem;
+}
+.navContainer .nameDataContain button {
+  padding: 0.2rem 2rem;
+  border-radius: 0.5rem;
+  border: none;
+}
+.navContainer .nameDataContain button:hover {
+  background: #22a39f;
+  color: #fff;
+  cursor: pointer;
+}
 
 .listContainer {
   width: 50%;
@@ -181,6 +194,7 @@
   margin: 2rem auto;
   border-radius: 2rem;
   background: #3d3d3d;
+  text-align: center;
   display: flex;
   flex-direction: column;
 }
@@ -191,6 +205,18 @@
 .cartContain .miBuy {
   display: flex;
   flex-direction: row;
+}
+.cartContain .miBuy .miPay button {
+  padding: 1rem;
+  border-radius: 1rem;
+  border: none;
+  margin: 1rem auto;
+  background: #22a39f;
+  color: #000;
+}
+.cartContain .miBuy .miPay button:hover {
+  cursor: pointer;
+  background: #fff;
 }
 .cartContain .miBuy .miProducts {
   width: 70%;
@@ -223,18 +249,32 @@
 .cartContain .miBuy .miProducts .itemContent button .bashBtn:hover {
   color: red;
 }
-.cartContain .miBuy .miPay {
+.cartContain .link {
+  text-decoration: none;
+  color: #000;
+  width: 12rem;
+  background: #22A39F;
+  border-radius: 1rem;
+  display: block;
+  padding: 1rem;
+  margin: 1rem auto;
+}
+.cartContain .link:hover {
+  color: #000;
+  background: #fff;
+}
+.cartContain .link:hover .miPay {
   width: 20%;
   display: flex;
   justify-content: center;
   flex-direction: column;
 }
-.cartContain .miBuy .miPay h4.totalText {
+.cartContain .link:hover .miPay h4.totalText {
   margin: 1rem;
   text-align: center;
   color: #Fff;
 }
-.cartContain .miBuy .miPay button {
+.cartContain .link:hover .miPay button {
   width: 10rem;
   padding: 1rem;
   margin: 1rem auto;
@@ -242,7 +282,7 @@
   border: none;
   cursor: pointer;
 }
-.cartContain .miBuy .miPay button:hover {
+.cartContain .link:hover .miPay button:hover {
   background: #22A39F;
   color: #fff;
 }
@@ -277,4 +317,71 @@
   border: none;
   border-radius: 1rem;
   cursor: pointer;
+}
+.loginScreen .login form button:hover {
+  background: #3d3d3d;
+  color: #22a39f;
+}
+.loginScreen .login .link {
+  text-decoration: none;
+  padding: 1rem;
+  background: #fff;
+  display: block;
+  text-align: center;
+  margin: 1rem;
+  border-radius: 1rem;
+  color: #000;
+}
+.loginScreen .login .link:hover {
+  background: #3d3d3d;
+  color: #22a39f;
+}
+
+.checkoutContain {
+  width: 40%;
+  background: #22a39f;
+  text-align: center;
+  margin: 5rem auto;
+  padding: 2rem;
+}
+.checkoutContain form {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: 1rem auto;
+  padding: 1rem;
+}
+.checkoutContain form input {
+  width: 100%;
+  margin: 1rem auto;
+  height: 2rem;
+  border: none;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+.checkoutContain form button {
+  margin: 1rem auto;
+  width: 12rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  border: none;
+}
+.checkoutContain form button:hover {
+  cursor: pointer;
+  background: #3d3d3d;
+  color: #22a39f;
+}
+.checkoutContain p {
+  margin: 2rem auto;
+}
+.checkoutContain .link {
+  text-decoration: none;
+  background: #fff;
+  padding: 1rem 4rem;
+  color: #000;
+  border-radius: 1rem;
+}
+.checkoutContain .link:hover {
+  background: #3d3d3d;
+  color: #22a39f;
 }/*# sourceMappingURL=main.css.map */

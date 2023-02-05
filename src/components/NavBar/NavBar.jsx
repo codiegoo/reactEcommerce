@@ -15,19 +15,17 @@ export const NavBar = () => {
         <Link to="/reactEcommerce/"><img src="/logo.png" className="logo"></img></Link>
       </div>
       <ul className="listContainer">
-        <Link className="listItem" to="/reactEcommerce/" >Inicio</Link>
+        <Link className="listItem" to="/" >Inicio</Link>
         <Link className="listItem" to="/productos/celulares">Celulares</Link>
         <Link className="listItem" to="/productos/tablets">Tablets</Link>
         <Link className="listItem" to="/productos/Laptops">LapTops</Link>
-        <Link className="listItem" to="/productos/desktop">Desktop</Link>
-        <Link className="listItem" to="/productos/accesorios">Accesorios</Link>
         <Link className="listItem" to="/nosotros">Contacto</Link>
       </ul>
       <div className="iconMyCar">
         <CartWidget />
         {/* <Link to="/miCarrito"><i className="bi bi-cart3 iconCar"></i></Link> */}
       </div>
-      <div>
+      <div className="nameDataContain">
         <p>Bienvenido: {user.email}</p>
         <button onClick={logout}>Logout</button>
       </div>

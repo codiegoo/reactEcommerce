@@ -1,11 +1,11 @@
 import { useState } from "react"
-import { useLoginContext } from "../../Context/LoginContext"
 import { Link } from "react-router-dom"
+import { useLoginContext } from "../../Context/LoginContext"
 
 
-export const LoginScreen = () => {
+export const RegisterScreen = () => {
 
-  const {login, user, loading} = useLoginContext()
+  const {user, loading, register} = useLoginContext()
 
   const [values, setValues] = useState({
     email: '',
@@ -21,12 +21,12 @@ export const LoginScreen = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    login(values)
+    register(values)
   }
   return(
     <div className="loginScreen">
       <div className="login">
-        <h2>Login</h2>
+        <h2>Register</h2>
 
 
         <form onSubmit={handleSubmit}>
@@ -35,7 +35,7 @@ export const LoginScreen = () => {
           <button disabled={loading}>{loading ? 'Cargando':'Ingresar'}</button>
           {user.error && <p>{user.error}</p>}
         </form>
-        <Link to="/register" className="link">Registrarme</Link>
+        <Link to="/login" className="link">Iniciar Sesion</Link>
       </div>
     </div>
   )
