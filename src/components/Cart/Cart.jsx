@@ -1,7 +1,7 @@
 import { useContext } from "react"
 import { CartContext } from "../../Context/CartContext"
 import { Link } from "react-router-dom"
-import { BsFillTrashFill } from "react-icons/bs"
+import { BsFillTrashFill, BsLayoutTextWindow } from "react-icons/bs"
 
 export const Cart = () => {
   
@@ -12,9 +12,9 @@ export const Cart = () => {
     {
       cart.length === 0
       ? <>
-          <h2>Tu carrito esta bacio 😑</h2>
+          <h2>Tu carrito esta vacio 😑</h2>
           <p>Por favor agrega productos a tu carrito para poder comprar!😉</p>
-          <Link to="/reactEcommerce/">Volver</Link>
+          <Link to="/reactEcommerce/" className="link">Volver</Link>
         </>
       : <>
           <h2>Tu pedido esta listo!</h2>
@@ -37,6 +37,7 @@ export const Cart = () => {
             <div className="miPay">
               <h4 className="totalText">Total: ${totalProductCart()}</h4>
               <button onClick={emptyCart}>Vaciar Carrito</button>
+              <Link to="/checkout" className="link">Terminar mi compra</Link>
             </div>
           </div>
         </>
