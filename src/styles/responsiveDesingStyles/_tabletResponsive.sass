@@ -1,0 +1,69 @@
+@media screen and (max-width: 1800px)
+  header
+    .bannerImg
+      // background: black
+      height: 65rem
+  section.prodContainer
+    grid-template-columns: 1fr 1fr
+@media screen and (max-width: 1300px)
+  nav
+    .nameDataContain
+      display: none
+    ul.listContainer
+      width: auto
+@media screen and (max-width: 850px)
+  header
+    .bannerImg
+      h2.titleText
+        font-size: 4rem
+        padding: 6rem
+      p
+        font-size: 4rem
+        padding: 4rem
+  nav
+    height: auto
+    ul.listContainer
+      display: grid
+      grid-template-columns: 1fr 1fr 1fr
+      a.listItem
+        margin: .8rem
+@media screen and (max-width: 560px)
+    header
+    .bannerImg
+      h2.titleText
+        padding: 3rem !important
+      img
+        width: 60%
+    section.prodContainer
+      grid-template-columns: 1fr
+@media screen and (max-width: 460px)
+    header
+      .bannerImg
+        h2.titleText
+          padding: 0 !important
+          padding-top: 3rem !important
+          padding-bottom: 3rem !important
+          font-size: 3.2rem
+        p
+          padding: 1rem
+          font-size: 3.2rem
+        img
+          width: 70% !important
+    nav.navContainer
+      div.LogoContainer
+        display: none !important
+      .iconMyCar
+        .linkCart
+          svg
+            width: 2rem
+@media screen and (max-width: 350px)
+  nav
+    flex-direction: column !important
+    .listContainer
+      .listItem
+        margin: 0.4rem !important
+  header
+    h2
+      font-size: 2.8rem !important
+    p
+      font-size: 2.8rem !important

@@ -19,7 +19,8 @@ export const NavBar = () => {
         <Link className="listItem" to="/productos/celulares">Celulares</Link>
         <Link className="listItem" to="/productos/tablets">Tablets</Link>
         <Link className="listItem" to="/productos/Laptops">LapTops</Link>
-        <Link className="listItem" to="/nosotros">Contacto</Link>
+        <Link className="listItem" to="/productos/desktop">Desktop</Link>
+        <Link className="listItem" to="/productos/accesorios">Accesorios</Link>
       </ul>
       <div className="iconMyCar">
         <CartWidget />

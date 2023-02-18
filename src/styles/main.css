@@ -10,7 +10,7 @@
 
 .navContainer {
   width: 100%;
-  height: 4rem;
+  height: auto;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -64,14 +64,16 @@
 
 .bannerImg {
   width: 100%;
-  height: 100vh;
+  height: 65rem;
   background: #22a39f;
 }
 .bannerImg h2 {
   color: #3d3d3d;
   font-family: sans-serif;
   font-size: 8rem;
-  padding: 4rem 2rem 0rem 19rem;
+  display: block;
+  padding: 2rem;
+  text-align: center;
 }
 .bannerImg h2 span {
   color: #F3EFE0;
@@ -81,16 +83,16 @@
   font-family: sans-serif;
   font-weight: bold;
   font-size: 4rem;
-  padding-left: 90rem;
+  display: block;
+  text-align: center;
 }
 .bannerImg p span {
   color: #3d3d3d;
 }
 .bannerImg img {
-  width: 50%;
-  position: relative;
-  left: 10rem;
-  bottom: 8rem;
+  display: block;
+  width: 35%;
+  margin: 2rem auto;
 }
 
 .prodCard {
@@ -388,4 +390,87 @@
 .checkoutContain .link:hover {
   background: #3d3d3d;
   color: #22a39f;
+}
+
+@media screen and (max-width: 1800px) {
+  header .bannerImg {
+    height: 65rem;
+  }
+  section.prodContainer {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (max-width: 1300px) {
+  nav .nameDataContain {
+    display: none;
+  }
+  nav ul.listContainer {
+    width: auto;
+  }
+}
+@media screen and (max-width: 850px) {
+  header .bannerImg h2.titleText {
+    font-size: 4rem;
+    padding: 6rem;
+  }
+  header .bannerImg p {
+    font-size: 4rem;
+    padding: 4rem;
+  }
+  nav {
+    height: auto;
+  }
+  nav ul.listContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  nav ul.listContainer a.listItem {
+    margin: 0.8rem;
+  }
+}
+@media screen and (max-width: 560px) {
+  .bannerImg h2.titleText {
+    padding: 3rem !important;
+  }
+  .bannerImg img {
+    width: 60%;
+  }
+  section.prodContainer {
+    grid-template-columns: 1fr;
+  }
+}
+@media screen and (max-width: 460px) {
+  header .bannerImg h2.titleText {
+    padding: 0 !important;
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+    font-size: 3.2rem;
+  }
+  header .bannerImg p {
+    padding: 1rem;
+    font-size: 3.2rem;
+  }
+  header .bannerImg img {
+    width: 70% !important;
+  }
+  nav.navContainer div.LogoContainer {
+    display: none !important;
+  }
+  nav.navContainer .iconMyCar .linkCart svg {
+    width: 2rem;
+  }
+}
+@media screen and (max-width: 350px) {
+  nav {
+    flex-direction: column !important;
+  }
+  nav .listContainer .listItem {
+    margin: 0.4rem !important;
+  }
+  header h2 {
+    font-size: 2.8rem !important;
+  }
+  header p {
+    font-size: 2.8rem !important;
+  }
 }/*# sourceMappingURL=main.css.map */
