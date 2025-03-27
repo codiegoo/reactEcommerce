@@ -1,13 +1,7 @@
 {
   "name": "reactecommerce",
-  "homepage": "https://devicesshopdiegoreact.000webhostapp.com/",
   "private": true,
   "version": "0.0.0",
-  {
-    "rewrites": [
-      { "source": "/(.*)", "destination": "/" }
-    ]
-  },  
   "scripts": {
     "dev": "vite",
     "build": "vite build",
